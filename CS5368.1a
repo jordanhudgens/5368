@@ -1,0 +1,10 @@
+sorts
+#s={a}.
+
+predicates
+price_controls(#s) :- -increased_supply(#s).
+increased_supply(#s) :- -price_controls(#s).
+
+rules
+shortages(a) :- price_controls(a).
+-shortages(a).
